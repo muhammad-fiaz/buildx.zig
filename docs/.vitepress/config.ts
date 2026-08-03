@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/buildx.zig/',
   title: 'buildx.zig',
   description: 'A minimal, efficient build system library for Zig',
   lang: 'en-US',
@@ -8,13 +9,13 @@ export default defineConfig({
   head: [
     ['meta', { property: 'og:title', content: 'buildx.zig' }],
     ['meta', { property: 'og:description', content: 'Simplified build system for Zig' }],
-    ['meta', { property: 'og:image', content: '/og-image.png' }],
+    ['meta', { property: 'og:image', content: '/buildx.zig/og-image.png' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' }],
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
-    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/buildx.zig/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/buildx.zig/favicon-96x96.png' }],
+    ['link', { rel: 'icon', href: '/buildx.zig/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/buildx.zig/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/buildx.zig/site.webmanifest' }],
   ],
   themeConfig: {
     logo: '/favicon.svg',
