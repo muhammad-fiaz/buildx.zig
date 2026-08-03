@@ -20,6 +20,32 @@ pub const MemberConfig = struct {
     install: bool = false,
     tests: bool = false,
     run: bool = false,
+
+    pub fn exe(name: []const u8, path: []const u8) MemberConfig {
+        return .{ .name = name, .path = path, .kind = .executable };
+    }
+
+    pub fn lib(name: []const u8, path: []const u8) MemberConfig {
+        return .{ .name = name, .path = path, .kind = .library };
+    }
+
+    pub fn with(self: MemberConfig, overrides: struct {
+        root: ?[]const u8 = null,
+        system_libs: plugins_mod.SystemLibSet = &.{},
+        local_deps: []const []const u8 = &.{},
+        install: bool = false,
+        tests: bool = false,
+        run: bool = false,
+    }) MemberConfig {
+        var result = self;
+        if (overrides.root) |r| result.root = r;
+        if (overrides.system_libs.len > 0) result.system_libs = overrides.system_libs;
+        if (overrides.local_deps.len > 0) result.local_deps = overrides.local_deps;
+        if (overrides.install) result.install = true;
+        if (overrides.tests) result.tests = true;
+        if (overrides.run) result.run = true;
+        return result;
+    }
 };
 
 pub const MemberKind = enum {
@@ -55,8 +81,10 @@ pub const Workspace = struct {
         const target = overrides.target orelse ws.target;
         const optimize = overrides.optimize orelse ws.optimize;
 
-        const root_file = overrides.root orelse member.root orelse
-            b.fmt("{s}/src/main.zig", .{member.path});
+        const root_file = overrides.root orelse member.root orelse switch (member.kind) {
+            .library => b.fmt("{s}/src/root.zig", .{member.path}),
+            .executable => b.fmt("{s}/src/main.zig", .{member.path}),
+        };
 
         const root_module = b.createModule(.{
             .root_source_file = b.path(root_file),

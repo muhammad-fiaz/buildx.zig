@@ -11,28 +11,9 @@ const buildx = @import("buildx");
 pub fn build(b: *std.Build) void {
     var ws = buildx.workspace(b, .{
         .members = &.{
-            buildx.MemberConfig{
-                .name = "core",
-                .path = "packages/core",
-                .kind = .library,
-                .root = "packages/core/src/root.zig",
-                .tests = true,
-            },
-            buildx.MemberConfig{
-                .name = "cli",
-                .path = "packages/cli",
-                .kind = .executable,
-                .local_deps = &.{"core"},
-                .install = true,
-                .run = true,
-            },
-            buildx.MemberConfig{
-                .name = "server",
-                .path = "packages/server",
-                .kind = .executable,
-                .local_deps = &.{"core"},
-                .install = true,
-            },
+            buildx.MemberConfig.lib("core", "packages/core").with(.{ .tests = true }),
+            buildx.MemberConfig.exe("cli", "packages/cli").with(.{ .local_deps = &.{"core"}, .install = true, .run = true }),
+            buildx.MemberConfig.exe("server", "packages/server").with(.{ .local_deps = &.{"core"}, .install = true, .tests = true }),
         },
     });
 
@@ -46,6 +27,14 @@ pub fn build(b: *std.Build) void {
 Build order matters. Build dependencies before dependants. If `cli` depends on `core`, build `core` first.
 :::
 
+## Convenience Constructors
+
+| Constructor | Description |
+|-------------|-------------|
+| `MemberConfig.exe(name, path)` | Create an executable member |
+| `MemberConfig.lib(name, path)` | Create a library member |
+| `.with(overrides)` | Chain additional options (install, tests, run, local_deps, etc.) |
+
 ## MemberConfig Fields
 
 | Field | Type | Default | Description |
@@ -53,7 +42,7 @@ Build order matters. Build dependencies before dependants. If `cli` depends on `
 | `name` | `[]const u8` | required | Package name |
 | `path` | `[]const u8` | required | Relative path to package directory |
 | `kind` | `MemberKind` | `.executable` | `.executable` or `.library` |
-| `root` | `?[]const u8` | `null` | Override root file (defaults to `{path}/src/main.zig`) |
+| `root` | `?[]const u8` | `null` | Override root file (defaults to `{path}/src/main.zig` for exe, `{path}/src/root.zig` for lib) |
 | `system_libs` | `SystemLibSet` | `&.{}` | System libraries to link |
 | `local_deps` | `[]const []const u8` | `&.{}` | Local workspace dependencies |
 | `install` | `bool` | `false` | Add install step |
