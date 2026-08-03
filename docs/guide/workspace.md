@@ -23,9 +23,8 @@ pub fn build(b: *std.Build) void {
 }
 ```
 
-::: warning
-Build order matters. Build dependencies before dependants. If `cli` depends on `core`, build `core` first.
-:::
+> [!WARNING]
+> Build order matters. Build dependencies before dependants. If `cli` depends on `core`, build `core` first.
 
 ## Convenience Constructors
 

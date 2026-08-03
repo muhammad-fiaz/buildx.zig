@@ -8,9 +8,8 @@
 zig fetch --save https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.1.tar.gz
 ```
 
-::: warning
-Zig 0.15 is deprecated and not supported. New projects should use Zig 0.16.0+ with buildx.zig v0.0.1.
-:::
+> [!WARNING]
+> Zig 0.15 is deprecated and not supported. New projects should use Zig 0.16.0+ with buildx.zig v0.0.1.
 
 ## Method 2: Zig Fetch (Main Branch)
 

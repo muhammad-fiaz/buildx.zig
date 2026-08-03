@@ -2,13 +2,11 @@
 
 `buildx.zig` is a minimal build system library for Zig that wraps `std.Build` with a single `project()` function. One call sets up compilation, installation, testing, and running - with full access to the underlying `std.Build` when you need more.
 
-::: tip
-If you build with buildx.zig, make sure to give it a star.
-:::
+> [!TIP]
+> If you build with buildx.zig, make sure to give it a star.
 
-::: note
-**Project maturity:** This project aims to be production-ready and is actively maintained. It is still a new project and not yet widely adopted. Feel free to use it in your projects.
-:::
+> [!NOTE]
+> **Project maturity:** This project aims to be production-ready and is actively maintained. It is still a new project and not yet widely adopted. Feel free to use it in your projects.
 
 ## Why buildx.zig?
 
