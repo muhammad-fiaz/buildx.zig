@@ -7,6 +7,10 @@ node_modules/
 docs/node_modules/
 package-lock.json
 
+# VitePress build output
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
 # OS files
 .DS_Store
 Thumbs.db

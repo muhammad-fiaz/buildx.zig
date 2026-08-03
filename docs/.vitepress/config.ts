@@ -21,7 +21,7 @@ export default defineConfig({
     logo: '/favicon.svg',
     siteTitle: 'buildx.zig',
     nav: [
-      { text: 'Guide', link: '/guide/quick-start' },
+      { text: 'Guide', link: '/guide/introduction' },
       { text: 'API', link: '/api/project' },
       { text: 'Examples', link: '/examples/' },
       { text: 'GitHub', link: 'https://github.com/muhammad-fiaz/buildx.zig' },
@@ -31,6 +31,8 @@ export default defineConfig({
         {
           text: 'Guide',
           items: [
+            { text: 'Introduction', link: '/guide/introduction' },
+            { text: 'Installation', link: '/guide/installation' },
             { text: 'Quick Start', link: '/guide/quick-start' },
             { text: 'Cross Compilation', link: '/guide/cross-compile' },
             { text: 'Workspaces', link: '/guide/workspace' },
