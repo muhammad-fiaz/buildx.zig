@@ -3,7 +3,7 @@ layout: home
 hero:
   name: buildx.zig
   text: Simplified Zig Build System
-  tagline: A minimal, efficient library that wraps std.Build for Zig 0.16.0
+  tagline: A minimal, efficient library that wraps std.Build for Zig
   actions:
     - theme: brand
       text: Get Started

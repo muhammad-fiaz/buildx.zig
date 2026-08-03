@@ -2,7 +2,7 @@
 <img src="docs/public/web-app-manifest-512x512.png" alt="buildx.zig logo" width="400" />
 
 <a href="https://muhammad-fiaz.github.io/buildx.zig/"><img src="https://img.shields.io/badge/docs-muhammad--fiaz.github.io-blue" alt="Documentation"></a>
-<a href="https://ziglang.org/"><img src="https://img.shields.io/badge/Zig-0.16.0-orange.svg?logo=zig" alt="Zig Version"></a>
+<a href="https://ziglang.org/"><img src="https://img.shields.io/badge/Zig-0.16.0+-orange.svg?logo=zig" alt="Zig Version"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig"><img src="https://img.shields.io/github/stars/muhammad-fiaz/buildx.zig" alt="GitHub stars"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig/issues"><img src="https://img.shields.io/github/issues/muhammad-fiaz/buildx.zig" alt="GitHub issues"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig/pulls"><img src="https://img.shields.io/github/issues-pr/muhammad-fiaz/buildx.zig" alt="GitHub pull requests"></a>
@@ -11,7 +11,7 @@
 <a href="https://github.com/muhammad-fiaz/buildx.zig/actions/workflows/ci.yml"><img src="https://github.com/muhammad-fiaz/buildx.zig/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <img src="https://img.shields.io/badge/platforms-linux%20%7C%20windows%20%7C%20macos-blue" alt="Supported Platforms">
 
-<p><em>A minimal, efficient build system library for Zig 0.16.0</em></p>
+<p><em>A minimal, efficient build system library for Zig</em></p>
 
 <b><a href="https://muhammad-fiaz.github.io/buildx.zig/">Documentation</a> |
 <a href="https://muhammad-fiaz.github.io/buildx.zig/api/project">API Reference</a> |
@@ -70,7 +70,7 @@ Before using `buildx.zig`, ensure you have the following:
 
 | Requirement | Version | Notes |
 |-------------|---------|-------|
-| **Zig** | 0.16.0+ | Download from [ziglang.org](https://ziglang.org/download/) |
+| **Zig** | 0.16.0 or later | Download from [ziglang.org](https://ziglang.org/download/) |
 | **Operating System** | Windows 10+, Linux, macOS | Cross-platform build support |
 
 ---

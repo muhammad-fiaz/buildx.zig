@@ -6,7 +6,7 @@ export default defineConfig({
   lang: 'en-US',
   head: [
     ['meta', { property: 'og:title', content: 'buildx.zig' }],
-    ['meta', { property: 'og:description', content: 'Simplified build system for Zig 0.16.0' }],
+    ['meta', { property: 'og:description', content: 'Simplified build system for Zig' }],
     ['meta', { property: 'og:image', content: '/og-image.png' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
