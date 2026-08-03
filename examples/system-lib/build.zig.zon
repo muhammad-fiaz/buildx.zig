@@ -1,0 +1,16 @@
+.{
+    .name = .syslibapp,
+    .version = "0.1.0",
+    .fingerprint = 0xdace7fbbf0413b3,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .buildx = .{
+            .path = "../..",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}

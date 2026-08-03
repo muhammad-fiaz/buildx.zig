@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://muhammad-fiaz.github.io/buildx.zig/
+    about: Check the docs first
+  - name: API Reference
+    url: https://muhammad-fiaz.github.io/buildx.zig/api/project
+    about: API reference documentation
+  - name: Quick Start Guide
+    url: https://muhammad-fiaz.github.io/buildx.zig/guide/quick-start
+    about: Get started quickly
