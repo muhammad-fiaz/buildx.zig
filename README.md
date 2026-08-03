@@ -10,6 +10,9 @@
 <a href="https://github.com/muhammad-fiaz/buildx.zig"><img src="https://img.shields.io/github/license/muhammad-fiaz/buildx.zig" alt="License"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig/actions/workflows/ci.yml"><img src="https://github.com/muhammad-fiaz/buildx.zig/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <img src="https://img.shields.io/badge/platforms-linux%20%7C%20windows%20%7C%20macos-blue" alt="Supported Platforms">
+<a href="https://github.com/muhammad-fiaz/buildx.zig/releases/latest"><img src="https://img.shields.io/github/v/release/muhammad-fiaz/buildx.zig?label=Latest%20Release&style=flat-square" alt="Latest Release"></a>
+<a href="https://github.com/sponsors/muhammad-fiaz"><img src="https://img.shields.io/badge/Sponsor-GitHub-pink?style=social&logo=github" alt="GitHub Sponsors"></a>
+<a href="https://hits.sh/muhammad-fiaz/buildx.zig/"><img src="https://hits.sh/muhammad-fiaz/buildx.zig.svg?label=Visitors&extraCount=0&color=green" alt="Repo Visitors"></a>
 
 <p><em>A minimal, efficient build system library for Zig</em></p>
 
