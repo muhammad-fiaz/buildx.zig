@@ -4,6 +4,7 @@ export default defineConfig({
   title: 'buildx.zig',
   description: 'A minimal, efficient build system library for Zig',
   lang: 'en-US',
+  cleanUrls: false,
   head: [
     ['meta', { property: 'og:title', content: 'buildx.zig' }],
     ['meta', { property: 'og:description', content: 'Simplified build system for Zig' }],
@@ -22,7 +23,7 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/quick-start' },
       { text: 'API', link: '/api/project' },
       { text: 'Examples', link: '/examples/' },
-      { text: 'GitHub', link: 'https://github.com/user/buildx.zig' },
+      { text: 'GitHub', link: 'https://github.com/muhammad-fiaz/buildx.zig' },
     ],
     sidebar: {
       '/guide/': [

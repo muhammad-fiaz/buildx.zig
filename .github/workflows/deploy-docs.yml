@@ -47,7 +47,7 @@ jobs:
 
       - name: Build with VitePress
         working-directory: ./docs
-        run: bun run docs:build
+        run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
