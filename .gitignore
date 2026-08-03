@@ -2,6 +2,11 @@
 .zig-cache/
 zig-out/
 
+# Node
+node_modules/
+docs/node_modules/
+package-lock.json
+
 # OS files
 .DS_Store
 Thumbs.db
