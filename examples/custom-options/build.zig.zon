@@ -2,7 +2,7 @@
     .name = .optionsapp,
     .version = "0.1.0",
     .fingerprint = 0x95f4b00e51a5186b,
-    .minimum_zig_version = "0.16.0",
+    .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .buildx = .{
             .path = "../..",

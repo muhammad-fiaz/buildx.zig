@@ -2,7 +2,7 @@
     .name = .hello,
     .version = "0.1.0",
     .fingerprint = 0x3610a686406dc8fa,
-    .minimum_zig_version = "0.16.0",
+    .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .buildx = .{
             .path = "../..",

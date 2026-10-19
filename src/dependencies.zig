@@ -8,7 +8,7 @@ pub fn wireDependencies(
     b: *Build,
     compile: *Step.Compile,
     target: Build.ResolvedTarget,
-    optimize: std.builtin.OptimizeMode,
+    optimize: std.lang.Optimize,
     dependencies: DependencyList,
 ) void {
     for (dependencies) |dep_name| {
@@ -20,7 +20,7 @@ fn wireSingleDependency(
     b: *Build,
     compile: *Step.Compile,
     target: Build.ResolvedTarget,
-    optimize: std.builtin.OptimizeMode,
+    optimize: std.lang.Optimize,
     dep_name: []const u8,
 ) void {
     const dep = b.dependency(dep_name, .{
@@ -36,7 +36,7 @@ pub fn wireDependencyAs(
     b: *Build,
     compile: *Step.Compile,
     target: Build.ResolvedTarget,
-    optimize: std.builtin.OptimizeMode,
+    optimize: std.lang.Optimize,
     dep_name: []const u8,
     import_name: []const u8,
 ) void {
@@ -53,7 +53,7 @@ pub fn wireDependenciesWithArgs(
     b: *Build,
     compile: *Step.Compile,
     target: Build.ResolvedTarget,
-    optimize: std.builtin.OptimizeMode,
+    optimize: std.lang.Optimize,
     dependencies: DependencyList,
     args: anytype,
 ) void {
@@ -66,7 +66,7 @@ fn wireSingleDependencyWithArgs(
     b: *Build,
     compile: *Step.Compile,
     target: Build.ResolvedTarget,
-    optimize: std.builtin.OptimizeMode,
+    optimize: std.lang.Optimize,
     dep_name: []const u8,
     args: anytype,
 ) void {

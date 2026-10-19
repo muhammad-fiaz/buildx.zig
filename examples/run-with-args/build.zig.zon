@@ -2,7 +2,7 @@
     .name = .argsapp,
     .version = "0.1.0",
     .fingerprint = 0x92f03917e2c34b35,
-    .minimum_zig_version = "0.16.0",
+    .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .buildx = .{
             .path = "../..",

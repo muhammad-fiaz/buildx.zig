@@ -9,7 +9,7 @@ pub const ProjectOptions = struct {
     name: []const u8,
     root: []const u8,
     target: ?Build.ResolvedTarget = null,
-    optimize: ?std.builtin.OptimizeMode = null,
+    optimize: ?std.lang.Optimize = null,
     dependencies: deps_mod.DependencyList = &.{},
     install: bool = false,
     tests: bool = false,
@@ -17,7 +17,7 @@ pub const ProjectOptions = struct {
     docs: bool = false,
     test_root: ?[]const u8 = null,
     kind: Kind = .executable,
-    linkage: ?std.builtin.LinkMode = null,
+    linkage: ?std.lang.LinkMode = null,
     version: ?std.SemanticVersion = null,
     use_llvm: ?bool = null,
     use_lld: ?bool = null,
@@ -88,7 +88,7 @@ pub fn project(b: *Build, options: ProjectOptions) *Step.Compile {
     if (options.run) {
         const run_cmd = b.addRunArtifact(compile);
         run_cmd.step.dependOn(b.getInstallStep());
-        if (b.args) |args| run_cmd.addArgs(args);
+        run_cmd.addPassthruArgs();
         const run_step = b.step("run", "Run the app");
         run_step.dependOn(&run_cmd.step);
     }
@@ -119,7 +119,7 @@ pub fn crossCompile(b: *Build, compile: *Step.Compile, cfg: ProjectOptions.Cross
     const app_name = compile.name;
     const root_file = compile.root_module.root_source_file orelse
         @panic("compile step must have a root source file");
-    const optimize = compile.root_module.optimize orelse .Debug;
+    const optimize = compile.root_module.optimize orelse .debug;
 
     const cross_step = b.step(cfg.step_name, cfg.step_desc);
 
@@ -140,7 +140,7 @@ pub fn crossCompile(b: *Build, compile: *Step.Compile, cfg: ProjectOptions.Cross
 }
 
 var cached_target: ?Build.ResolvedTarget = null;
-var cached_optimize: ?std.builtin.OptimizeMode = null;
+var cached_optimize: ?std.lang.Optimize = null;
 
 fn getCachedTarget(b: *Build) Build.ResolvedTarget {
     if (cached_target) |t| return t;
@@ -148,7 +148,7 @@ fn getCachedTarget(b: *Build) Build.ResolvedTarget {
     return cached_target.?;
 }
 
-fn getCachedOptimize(b: *Build) std.builtin.OptimizeMode {
+fn getCachedOptimize(b: *Build) std.lang.Optimize {
     if (cached_optimize) |o| return o;
     cached_optimize = b.standardOptimizeOption(.{});
     return cached_optimize.?;

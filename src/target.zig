@@ -62,10 +62,10 @@ pub fn artifactName(b: *Build, app_name: []const u8, query: Target.Query) []cons
 }
 
 const all_os = [_]Os.Tag{
-    .windows, .linux, .macos,
+    .windows, .linux,  .macos,
     .freebsd, .netbsd, .openbsd,
-    .uefi, .wasi, .emscripten,
-    .ios, .tvos, .watchos,
+    .uefi,    .wasi,   .emscripten,
+    .ios,     .tvos,   .watchos,
 };
 
 const desktop_os = [_]Os.Tag{
@@ -162,14 +162,16 @@ const wasm_archs = [_]Cpu.Arch{
 };
 
 const arch_list = [_]Cpu.Arch{
-    .x86, .x86_64,
-    .arm, .aarch64,
-    .riscv32, .riscv64,
-    .mips, .mipsel, .mips64, .mips64el,
-    .powerpc, .powerpc64, .powerpc64le,
-    .sparc64, .s390x,
-    .wasm32, .wasm64,
-    .hexagon, .loongarch64, .thumb,
+    .x86,         .x86_64,
+    .arm,         .aarch64,
+    .riscv32,     .riscv64,
+    .mips,        .mipsel,
+    .mips64,      .mips64el,
+    .powerpc,     .powerpc64,
+    .powerpc64le, .sparc64,
+    .s390x,       .wasm32,
+    .wasm64,      .hexagon,
+    .loongarch64, .thumb,
 };
 
 fn q(arch: Cpu.Arch, os: Os.Tag) Target.Query {

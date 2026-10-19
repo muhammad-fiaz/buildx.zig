@@ -56,7 +56,7 @@ pub const MemberKind = enum {
 pub const Workspace = struct {
     b: *Build,
     target: Build.ResolvedTarget,
-    optimize: std.builtin.OptimizeMode,
+    optimize: std.lang.Optimize,
     members: std.ArrayList(*Member),
     built: std.StringHashMap(*Step.Compile),
 
@@ -135,7 +135,7 @@ pub const Workspace = struct {
         if (member.run) {
             const run_cmd = b.addRunArtifact(compile);
             run_cmd.step.dependOn(b.getInstallStep());
-            if (b.args) |args| run_cmd.addArgs(args);
+            run_cmd.addPassthruArgs();
             const run_step = b.step(
                 b.fmt("{s}:run", .{member.name}),
                 b.fmt("Run {s}", .{member.name}),
@@ -187,7 +187,7 @@ pub fn workspace(b: *Build, options: WorkspaceOptions) Workspace {
 pub const ProjectOverrides = struct {
     root: ?[]const u8 = null,
     target: ?Build.ResolvedTarget = null,
-    optimize: ?std.builtin.OptimizeMode = null,
+    optimize: ?std.lang.Optimize = null,
 };
 
 test "workspace" {

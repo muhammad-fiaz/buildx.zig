@@ -4,7 +4,7 @@
 
 
 <a href="https://muhammad-fiaz.github.io/buildx.zig/"><img src="https://img.shields.io/badge/docs-muhammad--fiaz.github.io-blue" alt="Documentation"></a>
-<a href="https://ziglang.org/"><img src="https://img.shields.io/badge/Zig-0.16.0+-orange.svg?logo=zig" alt="Zig Version"></a>
+<a href="https://ziglang.org/"><img src="https://img.shields.io/badge/Zig-0.17.0+-orange.svg?logo=zig" alt="Zig Version"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig"><img src="https://img.shields.io/github/stars/muhammad-fiaz/buildx.zig" alt="GitHub stars"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig/issues"><img src="https://img.shields.io/github/issues/muhammad-fiaz/buildx.zig" alt="GitHub issues"></a>
 <a href="https://github.com/muhammad-fiaz/buildx.zig/pulls"><img src="https://img.shields.io/github/issues-pr/muhammad-fiaz/buildx.zig" alt="GitHub pull requests"></a>
@@ -95,7 +95,7 @@ Before using `buildx.zig`, ensure you have the following:
 
 | Requirement | Version | Notes |
 |-------------|---------|-------|
-| **Zig** | 0.16.0 or later | Download from [ziglang.org](https://ziglang.org/download/) |
+| **Zig** | 0.17.0 or later | Use v0.0.1 for Zig 0.16 (see Installation). Download from [ziglang.org](https://ziglang.org/download/) |
 | **Operating System** | Windows 10+, Linux, macOS | Cross-platform build support |
 
 ---
@@ -133,14 +133,20 @@ zig build -Dtarget=aarch64-macos
 
 ### Method 1: Zig Fetch (Recommended)
 
-**Latest Release (v0.0.1)**
+**Zig 0.17 (Recommended, Latest Release v0.0.2)**
+
+```bash
+zig fetch --save https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.2.tar.gz
+```
+
+**Zig 0.16 (Latest Release v0.0.1)**
 
 ```bash
 zig fetch --save https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.1.tar.gz
 ```
 
 > [!WARNING]
-> Zig 0.15 is deprecated and not supported. New projects should use Zig 0.16.0+ with buildx.zig v0.0.1.
+> Zig 0.15 and earlier are not supported. First release v0.0.1 targets Zig 0.16.0+, and v0.0.2 targets Zig 0.17.0+.
 
 ### Method 2: Zig Fetch (Main Branch)
 
@@ -157,7 +163,7 @@ Add the dependency to your `build.zig.zon` file.
 ```zig
 .dependencies = .{
     .buildx = .{
-        .url = "https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.1.tar.gz",
+        .url = "https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.2.tar.gz",
         .hash = "...", // Run `zig fetch --save <url>` to generate the hash.
     },
 },
@@ -395,7 +401,7 @@ pub fn project(b: *std.Build, options: ProjectOptions) *std.Build.Step.Compile
 | `tests` | `bool` | `false` | Add test step |
 | `docs` | `bool` | `false` | Add docs generation step |
 | `target` | `?ResolvedTarget` | `null` | Override `-Dtarget` |
-| `optimize` | `?OptimizeMode` | `null` | Override `-Doptimize` |
+| `optimize` | `?std.lang.Optimize` | `null` | Override `-Doptimize` |
 | `dependencies` | `DependencyList` | `&.{}` | build.zig.zon dependencies |
 | `link` | `LinkConfig` | `.{}` | Linking configuration |
 | `linkage` | `?LinkMode` | `.static` | Library: `.static` or `.dynamic` |
@@ -469,6 +475,9 @@ const port = buildx.option(b, u16, "port", "Server port");
 ```bash
 # Run library tests
 zig build test
+
+# Generate native Zig documentation (emitted to zig-out/docs)
+zig build docs
 
 # Build all examples
 cd examples/basic-executable && zig build
