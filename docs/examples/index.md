@@ -1,3 +1,12 @@
+---
+title: "Examples"
+description: "Browse runnable buildx.zig examples covering executables, libraries, cross compilation, options, system libraries, and monorepos."
+head:
+  - - meta
+    - name: keywords
+      content: "buildx.zig examples, zig examples, sample build.zig"
+---
+
 # Examples
 
 All examples are in the `examples/` directory and build successfully.

@@ -1,3 +1,12 @@
+---
+title: "project()"
+description: "API reference for buildx.project(): ProjectOptions, kinds, installation, testing, running, linking, and dependencies."
+head:
+  - - meta
+    - name: keywords
+      content: "ProjectOptions, project(), buildx.zig api, addExecutable, addLibrary"
+---
+
 # project()
 
 Create a project. The main entry point for buildx.zig.
@@ -18,7 +27,7 @@ pub const ProjectOptions = struct {
     name: []const u8,                    // required: artifact name
     root: []const u8,                    // required: root source file
     target: ?ResolvedTarget = null,      // override -Dtarget
-    optimize: ?OptimizeMode = null,      // override -Doptimize
+    optimize: ?std.lang.Optimize = null, // override -Doptimize
     dependencies: DependencyList = &.{}, // build.zig.zon dependencies
     install: bool = false,               // add install step
     tests: bool = false,                 // add test step

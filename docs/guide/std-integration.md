@@ -1,3 +1,12 @@
+---
+title: "Integrating with std.Build"
+description: "Drop down to the full std.Build API: every buildx.zig project() returns *Step.Compile for advanced customization."
+head:
+  - - meta
+    - name: keywords
+      content: "std.Build, zig build steps, Step.Compile, advanced zig build, buildx.zig integration"
+---
+
 # Integrating with std.Build
 
 buildx.zig is an enhancement, not a replacement, for `std.Build`. It simplifies common patterns while giving you full access to `std.Build` when you need explicit customization.

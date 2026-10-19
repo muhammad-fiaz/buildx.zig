@@ -1,3 +1,12 @@
+---
+title: "Custom Options"
+description: "Use typed build-time options with defaults and -D flags in a buildx.zig project."
+head:
+  - - meta
+    - name: keywords
+      content: "custom options example, boolOption, stringOption, -D flags, buildx.zig example"
+---
+
 # Custom Options
 
 Build-time configuration with typed options.

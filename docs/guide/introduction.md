@@ -1,3 +1,12 @@
+---
+title: "Introduction"
+description: "Learn what buildx.zig is and why it exists: a minimal Zig build system library wrapping std.Build with a single project() function."
+head:
+  - - meta
+    - name: keywords
+      content: "zig build, buildx.zig, project(), std.Build, minimal build system"
+---
+
 # Introduction
 
 `buildx.zig` is a minimal build system library for Zig that wraps `std.Build` with a single `project()` function. One call sets up compilation, installation, testing, and running - with full access to the underlying `std.Build` when you need more.
@@ -31,5 +40,5 @@ Zig's `std.Build` is powerful but verbose. buildx.zig simplifies common patterns
 
 ## Requirements
 
-- **Zig:** 0.16.0 or later
+- **Zig:** 0.17.0 or later (v0.0.1 supports Zig 0.16.0)
 - **Operating System:** Windows 10+, Linux, or macOS

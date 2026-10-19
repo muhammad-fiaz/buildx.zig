@@ -1,1 +1,4 @@
-buildx.zig
+User-agent: *
+Allow: /
+
+Sitemap: https://muhammad-fiaz.github.io/buildx.zig/sitemap.xml

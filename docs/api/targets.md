@@ -1,3 +1,12 @@
+---
+title: "Targets"
+description: "API reference for buildx target presets: all, desktop, linux, windows, macos, arm, riscv, freestanding, and wasm."
+head:
+  - - meta
+    - name: keywords
+      content: "target presets, target list, cross compile targets, buildx.zig api, architectures"
+---
+
 # Targets
 
 Pre-defined target lists for cross-compilation.

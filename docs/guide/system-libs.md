@@ -1,3 +1,12 @@
+---
+title: "System Libraries"
+description: "Link C/C++ system libraries, frameworks, include paths, macros, and objects using the buildx.zig link configuration."
+head:
+  - - meta
+    - name: keywords
+      content: "system libraries, zig linking, link libc, libcpp, frameworks, include paths, c macros"
+---
+
 # System Libraries
 
 Link C/C++ system libraries with the `link` field.

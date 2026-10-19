@@ -1,3 +1,12 @@
+---
+title: "Cross Compilation"
+description: "Cross-compile an executable for the full desktop target matrix with one build.zig file."
+head:
+  - - meta
+    - name: keywords
+      content: "cross compile example, buildx.zig example, desktop targets, zig build cross"
+---
+
 # Cross Compilation
 
 Build for all platforms with one config.

@@ -1,3 +1,12 @@
+---
+title: "Custom Options"
+description: "Define typed build-time options with defaults using buildx.boolOption(), buildx.stringOption(), and buildx.option()."
+head:
+  - - meta
+    - name: keywords
+      content: "zig build options, buildx.zig options, boolOption, stringOption, -D flags"
+---
+
 # Custom Options
 
 Define build-time options with `buildx.boolOption()`, `buildx.stringOption()`, and `buildx.option()`.

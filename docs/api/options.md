@@ -1,3 +1,12 @@
+---
+title: "Options"
+description: "API reference for buildx option helpers: option(), optionWithDefault(), boolOption(), stringOption(), enumOption(), intOption(), floatOption(), and pathOption()."
+head:
+  - - meta
+    - name: keywords
+      content: "build options api, boolOption, stringOption, pathOption, buildx.zig api"
+---
+
 # Options
 
 Build-time options with type-safe defaults.

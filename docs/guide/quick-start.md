@@ -1,3 +1,12 @@
+---
+title: "Quick Start"
+description: "Get started with buildx.zig: create executables, libraries, run, test, and docs steps with one project() call."
+head:
+  - - meta
+    - name: keywords
+      content: "zig quick start, buildx.zig project(), executable, library, test step, run step"
+---
+
 # Quick Start
 
 buildx.zig wraps `std.Build` with a single `project()` function. One call sets up compilation, installation, testing, and running.
@@ -61,7 +70,7 @@ This gives you:
 | `run` | `bool` | `false` | Add run step |
 | `tests` | `bool` | `false` | Add test step |
 | `target` | `?ResolvedTarget` | `null` | Override target (defaults to `-Dtarget`) |
-| `optimize` | `?OptimizeMode` | `null` | Override optimize (defaults to `-Doptimize`) |
+| `optimize` | `?std.lang.Optimize` | `null` | Override optimize (defaults to `-Doptimize`) |
 | `link` | `LinkConfig` | `.{}` | Linking configuration |
 | `version` | `?SemanticVersion` | `null` | Semantic version for the artifact |
 | `linkage` | `?LinkMode` | `.static` | Library only: `.static` or `.dynamic` |

@@ -1,3 +1,12 @@
+---
+title: "Run with Args"
+description: "Add a run step with passthrough arguments using zig build run -- args in buildx.zig."
+head:
+  - - meta
+    - name: keywords
+      content: "run step example, zig build run, passthrough args, buildx.zig example"
+---
+
 # Run with Args
 
 Executable with a run step.

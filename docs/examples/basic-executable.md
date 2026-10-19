@@ -1,3 +1,12 @@
+---
+title: "Basic Executable"
+description: "Minimal buildx.zig executable example: a project() call with install=true."
+head:
+  - - meta
+    - name: keywords
+      content: "basic executable example, buildx.zig example, install artifact"
+---
+
 # Basic Executable
 
 The simplest possible buildx.zig project.

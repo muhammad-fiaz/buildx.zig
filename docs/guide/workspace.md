@@ -1,3 +1,12 @@
+---
+title: "Workspaces"
+description: "Organize monorepos with buildx.zig workspaces: members, local dependencies, and per-package test and run steps."
+head:
+  - - meta
+    - name: keywords
+      content: "zig monorepo, buildx.zig workspace, packages, local dependencies, MemberConfig"
+---
+
 # Workspaces
 
 buildx.zig supports monorepo projects with local dependencies between packages.

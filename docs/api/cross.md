@@ -1,3 +1,12 @@
+---
+title: "crossCompile()"
+description: "API reference for buildx.crossCompile(): build one project for many targets with a CrossConfig."
+head:
+  - - meta
+    - name: keywords
+      content: "crossCompile(), CrossConfig, buildx.zig api, multi target build"
+---
+
 # crossCompile()
 
 Cross-compile a project for multiple targets.

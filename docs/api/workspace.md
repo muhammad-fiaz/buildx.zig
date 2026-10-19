@@ -1,3 +1,12 @@
+---
+title: "workspace()"
+description: "API reference for buildx.workspace(): WorkspaceOptions, MemberConfig, and local package dependencies for monorepos."
+head:
+  - - meta
+    - name: keywords
+      content: "workspace(), WorkspaceOptions, MemberConfig, buildx.zig api, monorepo"
+---
+
 # workspace()
 
 Create a workspace (monorepo) build system.
@@ -46,7 +55,7 @@ pub fn build(ws: *Workspace, name: []const u8, overrides: ProjectOverrides) *Ste
 pub const ProjectOverrides = struct {
     root: ?[]const u8 = null,
     target: ?Build.ResolvedTarget = null,
-    optimize: ?std.builtin.OptimizeMode = null,
+    optimize: ?std.lang.Optimize = null,
 };
 ```
 

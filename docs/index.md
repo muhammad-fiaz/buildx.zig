@@ -1,5 +1,12 @@
 ---
 layout: home
+titleTemplate: false
+title: buildx.zig — Simplified Zig Build System
+description: A minimal, efficient build system library for Zig. Wraps std.Build with a single project() call for compilation, installation, testing, and running.
+head:
+  - - meta
+    - name: keywords
+      content: "buildx.zig, zig, build system, build library, std.Build, cross compilation, monorepo, build tooling, zig package manager"
 hero:
   name: buildx.zig
   text: Simplified Zig Build System

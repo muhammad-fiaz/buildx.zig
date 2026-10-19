@@ -1,3 +1,12 @@
+---
+title: "Cross Compilation"
+description: "Cross-compile Zig projects for all platforms with the buildx.zig cross configuration and target presets."
+head:
+  - - meta
+    - name: keywords
+      content: "zig cross compilation, buildx.zig cross, target presets, aarch64, x86_64, wasm, freestanding"
+---
+
 # Cross Compilation
 
 buildx.zig supports cross-compilation via the `cross` field in `ProjectOptions`.

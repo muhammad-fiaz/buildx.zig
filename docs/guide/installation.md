@@ -1,15 +1,30 @@
+---
+title: "Installation"
+description: "Install buildx.zig with zig fetch or add it to build.zig.zon. Supports Zig 0.17 with v0.0.2 and Zig 0.16 with v0.0.1."
+head:
+  - - meta
+    - name: keywords
+      content: "install buildx.zig, zig fetch, build.zig.zon, zig dependency, zig package manager"
+---
+
 # Installation
 
 ## Method 1: Zig Fetch (Recommended)
 
-**Latest Release (v0.0.1)**
+**Zig 0.17 (Recommended, Latest Release v0.0.2)**
+
+```bash
+zig fetch --save https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.2.tar.gz
+```
+
+**Zig 0.16 (Latest Release v0.0.1)**
 
 ```bash
 zig fetch --save https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.1.tar.gz
 ```
 
 > [!WARNING]
-> Zig 0.15 is deprecated and not supported. New projects should use Zig 0.16.0+ with buildx.zig v0.0.1.
+> Zig 0.15 and earlier are not supported. First release v0.0.1 targets Zig 0.16.0+, and v0.0.2 targets Zig 0.17.0+.
 
 ## Method 2: Zig Fetch (Main Branch)
 
@@ -26,7 +41,7 @@ Add the dependency to your `build.zig.zon` file.
 ```zig
 .dependencies = .{
     .buildx = .{
-        .url = "https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.1.tar.gz",
+        .url = "https://github.com/muhammad-fiaz/buildx.zig/archive/refs/tags/0.0.2.tar.gz",
         .hash = "...", // Run `zig fetch --save <url>` to generate the hash.
     },
 },

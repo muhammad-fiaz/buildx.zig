@@ -1,3 +1,12 @@
+---
+title: "Monorepo"
+description: "Multi-package buildx.zig workspace example with local dependencies between packages."
+head:
+  - - meta
+    - name: keywords
+      content: "monorepo example, workspace example, buildx.zig example, local dependencies"
+---
+
 # Monorepo
 
 Multi-package workspace with local dependencies.

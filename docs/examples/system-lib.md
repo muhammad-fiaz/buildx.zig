@@ -1,3 +1,12 @@
+---
+title: "System Libraries"
+description: "Link C system libraries with include and remove-link churn using the buildx.zig link field."
+head:
+  - - meta
+    - name: keywords
+      content: "system lib example, zig link system library, buildx.zig example"
+---
+
 # System Libraries
 
 Link C system libraries.

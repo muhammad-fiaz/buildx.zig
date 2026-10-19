@@ -1,3 +1,12 @@
+---
+title: "System Libraries"
+description: "API reference for buildx system library linking: SystemLibConfig, SystemLibSet, LinkConfig, and applyLinkConfig()."
+head:
+  - - meta
+    - name: keywords
+      content: "SystemLibConfig, LinkConfig, system libraries api, libc, libcpp, buildx.zig api"
+---
+
 # System Libraries
 
 Link C/C++ system libraries via the `link` field.

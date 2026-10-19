@@ -1,3 +1,12 @@
+---
+title: "Library with Tests"
+description: "buildx.zig library example with kind=library and a built-in test step."
+head:
+  - - meta
+    - name: keywords
+      content: "library example, buildx.zig example, test step, zig build test"
+---
+
 # Library with Tests
 
 A library project with a test suite.

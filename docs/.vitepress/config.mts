@@ -22,7 +22,7 @@ export default defineConfig({
   cleanUrls: false,
 
   sitemap: {
-    hostname: SITE_URL,
+    hostname: `${SITE_URL}/`,
   },
 
   vite: {
@@ -33,7 +33,6 @@ export default defineConfig({
 
   head: [
     ["meta", { name: "title", content: SITE_NAME }],
-    ["meta", { name: "description", content: SITE_DESCRIPTION }],
     ["meta", { name: "keywords", content: KEYWORDS }],
     ["meta", { name: "author", content: "Muhammad Fiaz" }],
     ["meta", { name: "robots", content: "index, follow" }],
@@ -124,8 +123,7 @@ export default defineConfig({
 
     if (pageData.frontmatter.description) {
       pageData.frontmatter.head.push(
-        ["meta", { property: "og:description", content: pageData.frontmatter.description }],
-        ["meta", { name: "description", content: pageData.frontmatter.description }]
+        ["meta", { property: "og:description", content: pageData.frontmatter.description }]
       );
     }
 
@@ -178,7 +176,7 @@ export default defineConfig({
         programmingLanguage: "Zig",
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         downloadUrl: "https://github.com/muhammad-fiaz/buildx.zig",
-        softwareVersion: "0.0.1",
+        softwareVersion: "0.0.2",
         license: "https://opensource.org/licenses/MIT",
       });
     } else {
