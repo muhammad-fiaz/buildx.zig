@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import llmstxt from "vitepress-plugin-llms";
 
 export const SITE_URL = "https://muhammad-fiaz.github.io/buildx.zig";
 export const SITE_NAME = "buildx.zig";
@@ -11,6 +12,7 @@ export const ADSENSE_CLIENT_ID = "ca-pub-2040560600290490";
 
 export const KEYWORDS =
   "zig, build, build system, compilation, cross-compilation, workspace, monorepo, library, executable, std.Build, developer tools";
+
 
 export default defineConfig({
   lang: "en-US",
@@ -26,9 +28,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [
-      (await import("vitepress-plugin-llms")).default(),
-    ],
+    plugins: [llmstxt()],
   },
 
   head: [
@@ -61,8 +61,7 @@ export default defineConfig({
     ["meta", { name: "twitter:site", content: "@muhammadfiaz_" }],
     ["meta", { name: "twitter:creator", content: "@muhammadfiaz_" }],
 
-    // Canonical
-    ["link", { rel: "canonical", href: SITE_URL }],
+    // Canonical URLs are emitted per page in transformPageData.
 
     // Favicon
     ["link", { rel: "icon", href: "/buildx.zig/favicon.svg", type: "image/svg+xml" }],
@@ -99,19 +98,29 @@ export default defineConfig({
         crossorigin: "anonymous",
       },
     ],
+    // Microsoft Clarity
+    [
+      "script",
+      {},
+      `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "z5vdzih779");`,
+    ],
   ],
 
   ignoreDeadLinks: [/.*\.zig$/],
 
+  transformHtml(html) {
+    const noscript = `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
+    return html.replace(/<body([^>]*)>/, `<body$1>\n    ${noscript}`);
+  },
+
   transformPageData(pageData: any) {
     const pageTitle = pageData.title || SITE_NAME;
     const pageDescription = pageData.description || SITE_DESCRIPTION;
-    const normalizedPath = pageData.relativePath
-      .replace(/\.md$/, "")
-      .replace(/(^|\/)index$/, "$1")
-      .replace(/\/$/, "");
-    const canonicalUrl =
-      normalizedPath.length > 0 ? `${SITE_URL}/${normalizedPath}` : SITE_URL;
+    const canonicalUrl = `${SITE_URL}/${pageData.relativePath.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, ".html")}`;
 
     pageData.frontmatter.head ??= [];
     pageData.frontmatter.head.push(
@@ -196,19 +205,15 @@ export default defineConfig({
     graph.push(primarySchema);
 
     // BreadcrumbList
-    const breadcrumbs: any[] = [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }];
+    const breadcrumbs: Record<string, unknown>[] = [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+    ];
     if (!isHome) {
-      const pathParts = pageData.relativePath.replace(/\.md$/, "").split("/");
-      let currentPath = SITE_URL;
-      pathParts.forEach((part: string, index: number) => {
-        currentPath += `/${part}`;
-        const name = part.split("-").map((s: string) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
-        breadcrumbs.push({
-          "@type": "ListItem",
-          position: index + 2,
-          name,
-          item: index === pathParts.length - 1 ? canonicalUrl : currentPath,
-        });
+      breadcrumbs.push({
+        "@type": "ListItem",
+        position: 2,
+        name: pageTitle,
+        item: canonicalUrl,
       });
     }
     graph.push({ "@type": "BreadcrumbList", itemListElement: breadcrumbs });
